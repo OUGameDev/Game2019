@@ -475,6 +475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2110845170}
+  gravity: -1
+  jumpStrength: 5
 --- !u!143 &2110845170
 CharacterController:
   m_ObjectHideFlags: 0
