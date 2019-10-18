@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isGrounded());
 
         yaw += Input.GetAxis("Mouse X") * 5;
         transform.eulerAngles = new Vector3(0, yaw, 0);
