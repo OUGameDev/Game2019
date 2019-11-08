@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public Animator animator;
     Rigidbody rb;
     public float speed = 10;
     public float jumpSpeed = 5;
@@ -28,6 +28,15 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = new Vector3(0,0,0);
         velocity.x = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         velocity.z = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+
+        if (velocity.magnitude > 0)
+        {
+            animator.SetBool("moving", true);
+        }
+        else
+        {
+            animator.SetBool("moving", false);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded()) {
             this.rb.AddForce(new Vector3(0, jumpSpeed, 0), ForceMode.Impulse);
